@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <title>Определение птиц по фотографии</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <script src="./vendor/tf.min.js"></script>
+        <script src="./vendor/teachablemachine-image.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+        <style>
+            .container {width: auto;max-width: 680px;padding: 0 15px;}
+            .jumbotron {padding: 15px 0;background-color: #d4edda;color: #155724;}
+            .footer {background-color: #f5f5f5;}
+            img {max-width: 100%;height: auto;}
+        </style>
+    </head>
+        <body class="d-flex flex-column h-100">
+        <main role="main" class="flex-shrink-0">
+        <div class="jumbotron">
+                <div class="container">
+                    <h1 class="display-5">Определитель птиц</h1>
+                </div>
+        </div>  
+        <div class="container">
+            <p>Укажите файл с фотографией птицы </p>
+            <input  class="form-control-file" id="input" type="file" accept="image/*" onchange="init(this.files)">
+            <small>Модель умеет распозновать только некоторые виды птиц:</small>
+            <p id="preview" class="mt-3">
+                <img src="" id="image">
+            </p>
+            <p id="result"></p>
+        </div>
+    </main>    
+
+        <script type="text/javascript">
+            let date = document.getElementById('date');
+            date.innerHTML = new Date().getFullYear();
+        </script>
+        <script src="./index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
